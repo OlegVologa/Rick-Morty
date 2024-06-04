@@ -1,11 +1,30 @@
 <script setup>
-defineProps({
+import { onMounted, ref } from 'vue'
+import axios from 'axios'
+
+const props = defineProps({
   image: String,
   name: String,
   status: String,
   species: String,
-  location: String
+  cardId: Number,
+  location: String,
+  sceen: String
 })
+
+const firstSeen = ref('')
+
+const fetchSeen = async () => {
+  try {
+    const { data } = await axios.get(`${props.sceen}`)
+
+    firstSeen.value = data.name
+  } catch (err) {
+    console.log(err)
+  }
+}
+
+onMounted(fetchSeen)
 </script>
 
 <template>
@@ -27,7 +46,7 @@ defineProps({
       </div>
       <div class="section d-flex flex-column justify-content-end">
         <span class="text-grey">First seen in:</span>
-        <p class="text-link">The Wedding Squanchers</p>
+        <p class="text-link">{{ firstSeen }}</p>
       </div>
     </div>
   </div>

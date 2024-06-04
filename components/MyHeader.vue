@@ -2,6 +2,9 @@
 </script>
 
 <template>
+  <a href="#" class="header-link d-flex mt-5 ms-5">
+    <img src="../assets/link.svg" alt="icon" />
+  </a>
   <div class="container">
     <div class="header d-flex flex-column justify-content-end">
       <h1 class="text-center">The Rick and Morty API</h1>
@@ -16,7 +19,6 @@
   background-position: center;
   background-repeat: no-repeat;
   background-size: contain;
-  margin-top: 50px;
 }
 
 h1 {
