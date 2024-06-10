@@ -28,8 +28,10 @@ onMounted(fetchSeen)
 </script>
 
 <template>
-  <div class="card d-flex flex-row">
-    <img class="card-img" :src="image" alt="Brus" />
+  <div class="card d-flex flex-column flex-sm-row m-3">
+    <div class="frame-image">
+      <img class="card-img" :src="image" alt="Brus" />
+    </div>
     <div class="card-description d-flex flex-column justify-content-between">
       <div class="section d-flex flex-column justify-content-start">
         <h2>{{ name }}</h2>
@@ -55,7 +57,7 @@ onMounted(fetchSeen)
 <style scoped>
 .card {
   width: 600px;
-  height: 220px;
+  min-height: 220px;
   border-radius: 10px;
   background-color: rgb(32, 35, 41);
   color: #fff;
@@ -65,7 +67,9 @@ onMounted(fetchSeen)
 .card-img {
   width: 230px;
   height: 100%;
-  border-radius: none;
+  border-radius: 0px;
+  object-position: center center;
+  object-fit: cover;
 }
 
 .card-description {
@@ -110,5 +114,21 @@ h2 {
 
 .text-link:hover {
   color: rgb(255, 152, 0);
+}
+
+@media (max-width: 575px) {
+  .card {
+    width: 100%;
+  }
+
+  .card-img {
+    width: 100%;
+    height: 300px;
+  }
+
+  .card-description {
+    width: 100%;
+    height: 268px;
+  }
 }
 </style>
