@@ -2,7 +2,7 @@
 </script>
 
 <template>
-  <a href="#" class="header-link d-flex mt-5 ms-5">
+  <a href="#" class="header-link d-flex mt-5 ms-5 mb-5">
     <img src="../assets/link.svg" alt="icon" />
   </a>
   <div class="container">
