@@ -98,16 +98,16 @@ function pageNext() {
   </div>
   <div class="drive d-flex justify-content-center align-items-center p-5">
     <div
-      class="block-select d-flex flex-row flex-wrap justify-content-center align-items-center row-gap-5"
+      class="block-select d-flex flex-row flex-wrap justify-content-center align-items-center row-gap-5 column-gap-4"
     >
-      <div class="change-pages d-flex gap-1 me-5">
+      <div class="change-pages d-flex gap-1">
         <div @click="pagePrew" class="prew">пред.</div>
         <div class="page">{{ pageNumber }}</div>
         <div @click="pageNext" class="next">след.</div>
       </div>
       <input
         type="text"
-        class="form-control me-5"
+        class="form-control"
         placeholder="фильтрация по name"
         aria-label="name"
         aria-describedby="basic-addon1"
@@ -115,7 +115,7 @@ function pageNext() {
         @change="newName"
       />
       <select
-        class="form-select me-5"
+        class="form-select"
         id="floatingSelect"
         aria-label="Floating label select example"
         @change="newStatus"
